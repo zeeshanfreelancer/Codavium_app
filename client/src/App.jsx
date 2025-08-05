@@ -1,19 +1,16 @@
-
-import './App.css'
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Signup from './pages/Auth/Signup';
+import Login from './pages/Auth/Login';
 
 function App() {
-
-
   return (
-    <>
-    <h1>This is my first app</h1>
-    <h2>Welcome to Codavium!</h2>
-    <p>Here we will explore the world of coding and development.</p>
-    <p>Feel free to check out the code and contribute!</p>
-   
-  
-    </>
-  )
+    
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+  );
 }
 
-export default App
+export default App;
